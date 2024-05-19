@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { ThemeProvider } from "@/components/theme-provider";
+import SideBar from "@/components/SideBar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,8 +18,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <SideBar className="fixed left-0 top-0 hidden h-screen w-72 max-w-xs flex-1 flex-col border-r border-zinc-600 pl-2 pr-4 md:flex md:w-60" />
+          <main className="ml-80 mt-3">
+            <div className="ml-auto mr-auto w-[800px]"> {children}</div>
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
+/**********************
+ * Note:
+ * Themes Provider use "suppressHydrationWarning" to work
+ **********************/

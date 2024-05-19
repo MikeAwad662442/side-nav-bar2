@@ -17,6 +17,7 @@ npm install next-themes
 ```js
 npx shadcn-ui@latest init
 
+npx shadcn-ui@latest add button accordion avatar dropdown-menu navigation-menu popover separator
 ```
 
 ## devDependencies Libraries
