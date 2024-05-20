@@ -7,7 +7,7 @@ import {
 import { NavLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { NavBarItems } from "@/types";
-import { LucideIcon, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { Key } from "react";
 // =================== //
@@ -28,7 +28,7 @@ const NavbarAccordion = () => {
                 (i: NavBarItems, index: Key | null | undefined) => (
                   <Link
                     key={index}
-                    href={Items.href}
+                    href={i.href}
                     className="flex w-full justify-start gap-5 hover:bg-white"
                   >
                     {i.icon && <i.icon />} {i.label}

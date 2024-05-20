@@ -24,66 +24,66 @@ export const NavLinks: NavBarItems[] = [
     icon: Home,
   },
   {
-    href: "/",
+    href: "/Group1",
     label: "Group1",
     icon: Heart,
     groupLinks: [
       {
-        href: "/",
+        href: "/Group1",
         label: "item1",
         icon: Angry,
       },
       {
-        href: "/",
+        href: "/Group1",
         label: "item2",
         icon: Frown,
       },
       {
-        href: "/",
+        href: "/Group1",
         label: "item3",
         icon: Annoyed,
       },
     ],
   },
   {
-    href: "/",
+    href: "/Group2",
     label: "Group2",
     icon: HeartCrack,
     groupLinks: [
       {
-        href: "/",
+        href: "/Group2",
         label: "item1",
         icon: ShieldPlus,
       },
       {
-        href: "/",
+        href: "/Group2",
         label: "item2",
         icon: ShieldPlus,
       },
       {
-        href: "/",
+        href: "/Group2",
         label: "item3",
         icon: ShieldPlus,
       },
     ],
   },
   {
-    href: "/",
+    href: "/Group3",
     label: "Group3",
     icon: HeartHandshake,
     groupLinks: [
       {
-        href: "/",
+        href: "/Group3",
         label: "item1",
         icon: Star,
       },
       {
-        href: "/",
+        href: "/Group3",
         label: "item2",
         icon: Star,
       },
       {
-        href: "/",
+        href: "/Group3",
         label: "item3",
         icon: Star,
       },
