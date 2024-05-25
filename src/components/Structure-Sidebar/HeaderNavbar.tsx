@@ -1,30 +1,33 @@
 "use client";
-
-import { NavLinks } from "@/constants";
+// ===================== //
 // Logo Images
 import Image from "next/image";
 import FullLogo from "@/app/assets/FullLogo.png";
 import IconLogo from "@/app/assets/IconLogo.png";
 // Logo Images
-
-import dynamic from "next/dynamic";
-import { NavBarItems } from "@/types";
-import Link from "next/link";
+// ===================== //
 import { usePathname } from "next/navigation";
-import { Key } from "react";
-import { cn } from "@/lib/utils";
-import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import { NavbarTable, BurgerMenuAccordion } from "./NavbarComponents";
+// ===================== //
+// ==== Shadcn / ui ==== //
+import { Menu } from "lucide-react";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
+// ==== Shadcn / ui ==== //
+// ===================== //
 // Dynamic Components to Control the Problem Error: Hydration failed because the initial UI does not match what was rendered on the server.
+import dynamic from "next/dynamic";
 const ThemeMode = dynamic(() => import("./NavbarComponents/ThemeMode"), {
   ssr: false,
 });
-
+// ===================== //
 const HeaderNavbar = () => {
   const pathname = usePathname();
   return (
-    <header className="sticky inset-x-0 top-0 z-30 w-full border-b pt-2 lg:hidden">
+    <header className="sticky inset-x-0 top-0 z-30 w-full border-b bg-primary-foreground pt-2 lg:hidden">
       {/* Tablet Screen */}
-      <div className="flex items-center justify-between p-2 max-md:hidden">
+      <div className="flex items-center justify-between px-3 py-1 max-md:hidden">
         <Image
           src={FullLogo}
           alt="Logo"
@@ -33,40 +36,36 @@ const HeaderNavbar = () => {
           priority={true}
         />
         <nav className="flex justify-between ">
-          {NavLinks.map((Items: NavBarItems, index: Key | null | undefined) => (
-            <Link
-              href={Items.href}
-              key={index}
-              className={cn(
-                Items.href === pathname
-                  ? `"mx-1 border-r px-1 py-1 font-bold",${navigationMenuTriggerStyle()}`
-                  : `"mx-1 border-r px-1 py-1 ",${navigationMenuTriggerStyle()}`,
-              )}
-            >
-              <span
-                className={cn(
-                  "flex w-full justify-start gap-2",
-                  navigationMenuTriggerStyle(),
-                )}
-              >
-                {Items.icon && <Items.icon />} {Items.label}
-              </span>
-            </Link>
-          ))}
+          <NavbarTable />
         </nav>
         <ThemeMode />
       </div>
-
+      {/* Tablet Screen */}
       {/* Mobile Screen */}
       <div className="flex  justify-between p-2 sm:hidden">
         <Image
           src={IconLogo}
           alt="Logo"
-          width={25}
-          height={25}
+          width={50}
+          height={50}
           priority={true}
         />
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="secondary" size="icon">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side={"left"}>
+            <SheetClose className="w-full text-start">
+              <ThemeMode />
+            </SheetClose>
+            <Separator />
+            <BurgerMenuAccordion />
+          </SheetContent>
+        </Sheet>
       </div>
+      {/* Mobile Screen */}
     </header>
   );
 };
@@ -79,7 +78,3 @@ export default HeaderNavbar;
  * The tab's screen size (width is 768 pixels) and the page navigation bar appears at the top
  * Computer screen size and above (width 1024 pixels) The navigation sidebar appears
  **********************/
-
-// <header className="sticky inset-x-0 top-0 z-30 w-full border-b border-gray-200 transition-all">
-//   <nav className="h-20 bg-slate-50"></nav>
-// </header>;

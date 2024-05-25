@@ -1,6 +1,5 @@
-import LanguageToggle from "./LanguageToggle";
 import ThemeMode from "./ThemeMode";
-import NavbarAccordion from "./NavbarAccordion";
-import NavbarButton from "./NavbarButton";
+import NavbarAccordion, { BurgerMenuAccordion } from "./NavbarAccordion";
+import NavbarTable from "./NavbarTable";
 
-export { NavbarButton, NavbarAccordion, LanguageToggle, ThemeMode };
+export { NavbarAccordion, NavbarTable, ThemeMode, BurgerMenuAccordion };

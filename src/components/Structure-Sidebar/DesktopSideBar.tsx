@@ -1,15 +1,18 @@
 "use client";
+// ===================== //
 // Logo Images
 import Image from "next/image";
 import FullLogo from "@/app/assets/FullLogo.png";
 // Logo Images
+// ===================== //
 import { NavbarAccordion } from "./NavbarComponents";
+// ===================== //
 // Dynamic Components to Control the Problem Error: Hydration failed because the initial UI does not match what was rendered on the server.
 import dynamic from "next/dynamic";
 const ThemeMode = dynamic(() => import("./NavbarComponents/ThemeMode"), {
   ssr: false,
 });
-
+// ===================== //
 const DesktopSideBar = ({ className, ...props }: any) => {
   return (
     <nav className={className}>

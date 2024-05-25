@@ -3,9 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { DesktopSideBar, MobileSideBar } from "@/components";
+import { DesktopSideBar, HeaderNavbar } from "@/components";
 import { cn } from "@/lib/utils";
-import HeaderNavbar from "@/components/Structure-Sidebar/HeaderNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
           <DesktopSideBar className="h-screen w-60 border-r p-2 max-lg:hidden" />
           <main className="m-0 flex w-full flex-col p-0">
             <HeaderNavbar />
-            <div className="ml-auto mr-auto mt-2 text-center md:w-[800px]">
+            <div className="m-5 text-center md:ml-auto md:mr-auto md:w-[800px]">
               {children}
             </div>
           </main>

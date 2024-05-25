@@ -4,11 +4,15 @@ author: "Mike Awad"
 
 # Project Dynamic sidebar
 
+The navigation bar has three states:
+
+- Mobile phone screen size (width 425 pixels) showing the logo and hamburger menu
+- The tab's screen size (width is 768 pixels) and the page navigation bar appears at the top
+- Computer screen size and above (width 1024 pixels) The navigation sidebar appears
+
 ## dependencies Libraries
 
 next-themes => Dark mode
-
-useHooks.ts =>useHooks(🔥).ts is a React hooks library, written in Typescript and easy to use. It provides a set of hooks that enables you to build your React applications faster.
 
 ```js
 npm install next-themes
@@ -20,8 +24,7 @@ npm install usehooks-ts
 ```js
 npx shadcn-ui@latest init
 
-npx shadcn-ui@latest add button accordion avatar dropdown-menu navigation-menu popover separator
-npx shadcn-ui@latest add drawer sheet
+npx shadcn-ui@latest add button accordion menubar separator sheet
 ```
 
 ## devDependencies Libraries

@@ -1,7 +1,8 @@
-/* Notes:
+/**********************
+ * Notes:
  * If You want to use React-Icons in any File it MUST to be .tsx NOt .ts 😄
  * and be Notes to add in TypeScript as "icon?: JSX.Element" 🔥
- */
+ **********************/
 
 import { NavBarItems } from "@/types";
 import {
@@ -29,17 +30,17 @@ export const NavLinks: NavBarItems[] = [
     icon: Heart,
     groupLinks: [
       {
-        href: "/Group1/mike",
+        href: "/Group1/item1",
         label: "item1",
         icon: Angry,
       },
       {
-        href: "/Group1/naya",
+        href: "/Group1/item2",
         label: "item2",
         icon: Frown,
       },
       {
-        href: "/Group1/emma",
+        href: "/Group1/item3",
         label: "item3",
         icon: Annoyed,
       },
