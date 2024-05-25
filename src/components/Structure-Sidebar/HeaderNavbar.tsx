@@ -25,7 +25,7 @@ const ThemeMode = dynamic(() => import("./NavbarComponents/ThemeMode"), {
 const HeaderNavbar = () => {
   const pathname = usePathname();
   return (
-    <header className="sticky inset-x-0 top-0 z-30 w-full border-b bg-primary-foreground pt-2 lg:hidden">
+    <header className="sticky inset-x-0 top-0 z-30 w-full border-b bg-white pt-2 dark:bg-black lg:hidden">
       {/* Tablet Screen */}
       <div className="flex items-center justify-between px-3 py-1 max-md:hidden">
         <Image

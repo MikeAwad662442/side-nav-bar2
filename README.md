@@ -1,5 +1,6 @@
 ---
 author: "Mike Awad"
+email: "mikeawad662442@gmail.com"
 ---
 
 # Project Dynamic sidebar
