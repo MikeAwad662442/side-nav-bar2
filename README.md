@@ -17,7 +17,6 @@ next-themes => Dark mode
 
 ```js
 npm install next-themes
-npm install usehooks-ts
 ```
 
 ## shadcn/ui
@@ -34,7 +33,7 @@ npx shadcn-ui@latest add button accordion menubar separator sheet
 npm i -D eslint-config-prettier prettier prettier-plugin-tailwindcss
 ```
 
-```html
-<header>prettier.config.js</header>
-module.exports = { plugins: ["prettier-plugin-tailwindcss"], };
+```js
+prettier.config.js;
+module.exports = { plugins: ["prettier-plugin-tailwindcss"] };
 ```
