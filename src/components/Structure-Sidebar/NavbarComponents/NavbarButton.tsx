@@ -1,6 +1,6 @@
 // "use client";
 import React from "react";
-import { Button, ButtonProps } from "../ui/button";
+import { Button, ButtonProps } from "../../ui/button";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -29,3 +29,8 @@ const NavbarButton = ({
 };
 
 export default NavbarButton;
+/*************************
+ * Not Used yet
+ *
+ *
+ *************************/

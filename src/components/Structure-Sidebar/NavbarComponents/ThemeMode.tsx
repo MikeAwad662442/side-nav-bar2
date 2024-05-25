@@ -12,9 +12,14 @@ const ThemeMode = () => {
     <Button
       variant="secondary"
       size="icon"
+      className="h-[20px] w-[20px]"
       onClick={() => setTheme(`${dark ? "light" : "dark"}`)}
     >
-      {dark ? <Sun /> : <MoonStar />}
+      {dark ? (
+        <Sun size={20} className="m-0 p-0" />
+      ) : (
+        <MoonStar size={20} className="m-0 p-0" />
+      )}
     </Button>
   );
 };

@@ -29,17 +29,17 @@ export const NavLinks: NavBarItems[] = [
     icon: Heart,
     groupLinks: [
       {
-        href: "/Group1",
+        href: "/Group1/mike",
         label: "item1",
         icon: Angry,
       },
       {
-        href: "/Group1",
+        href: "/Group1/naya",
         label: "item2",
         icon: Frown,
       },
       {
-        href: "/Group1",
+        href: "/Group1/emma",
         label: "item3",
         icon: Annoyed,
       },

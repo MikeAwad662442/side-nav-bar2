@@ -1,26 +1,39 @@
+// "use client";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { NavLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { NavBarItems } from "@/types";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Key } from "react";
 // =================== //
 const NavbarAccordion = () => {
+  const pathname = usePathname();
   return (
     <Accordion type="single" collapsible className="w-full">
       {NavLinks.map((Items: NavBarItems, index: Key | null | undefined) =>
         Items.groupLinks ? (
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger>
-              <p className="flex w-full justify-start gap-5">
+              <span
+                className={cn(
+                  "flex w-full justify-start gap-2",
+                  navigationMenuTriggerStyle(),
+                  `${pathname.includes(Items.href) ? "font-bold" : ""}`,
+                )}
+              >
                 {Items.icon && <Items.icon />} {Items.label}
-              </p>
+              </span>
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent>
@@ -29,9 +42,16 @@ const NavbarAccordion = () => {
                   <Link
                     key={index}
                     href={i.href}
-                    className="flex w-full justify-start gap-5 hover:bg-white"
+                    className={i.href === pathname ? "font-bold" : ""}
                   >
-                    {i.icon && <i.icon />} {i.label}
+                    <span
+                      className={cn(
+                        "flex w-full justify-start gap-2",
+                        navigationMenuTriggerStyle(),
+                      )}
+                    >
+                      {i.icon && <i.icon />} {i.label}
+                    </span>
                   </Link>
                 ),
               )}
@@ -42,9 +62,16 @@ const NavbarAccordion = () => {
             <AccordionTrigger>
               <Link
                 href={Items.href}
-                className="w-50% flex justify-start gap-5 hover:bg-white"
+                className={Items.href === pathname ? "font-bold" : ""}
               >
-                {Items.icon && <Items.icon />} {Items.label}
+                <span
+                  className={cn(
+                    "flex w-full justify-start gap-2",
+                    navigationMenuTriggerStyle(),
+                  )}
+                >
+                  {Items.icon && <Items.icon />} {Items.label}
+                </span>
               </Link>
             </AccordionTrigger>
           </AccordionItem>
@@ -55,3 +82,8 @@ const NavbarAccordion = () => {
 };
 
 export default NavbarAccordion;
+
+/**********************
+ * Note:
+ * The Accordoion structure
+ **********************/
