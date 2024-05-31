@@ -12,7 +12,7 @@ next-themes => Dark mode
 npm install next-themes
 ```
 
-## shadcn/ui
+## shadcn/ui not used in Branch tailwindcss
 
 ```js
 npx shadcn-ui@latest init
